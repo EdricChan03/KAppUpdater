@@ -42,6 +42,7 @@ kotlin {
 }
 
 android {
+    namespace = "io.github.edricchan03.appupdater"
     compileSdk = 32
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
