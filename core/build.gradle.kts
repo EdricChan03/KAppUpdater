@@ -1,6 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    kotlin("multiplatform") version "1.6.20"
-    id("com.android.library") version "7.1.2"
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.gradle.library)
 }
 
 repositories {

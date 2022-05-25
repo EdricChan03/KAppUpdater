@@ -1,0 +1,10 @@
+[versions]
+android-gradle = "7.4.0-alpha02"
+kotlin = "1.6.21"
+
+[libraries]
+
+
+[plugins]
+android-gradle-library = { id = "com.android.library", version.ref = "android-gradle" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
