@@ -1,14 +1,19 @@
 package io.github.edricchan03.appupdater.data
 
-open class UpdateResult(open val currentVersion: UpdateVersion) {
-    data class Available(
-        override val currentVersion: UpdateVersion,
-        val availableVersion: UpdateVersion
-    ) : UpdateResult(currentVersion)
+sealed class UpdateResult<Version : AbstractUpdateVersion>(open val currentVersion: Version) {
+    data class Available<Version : AbstractUpdateVersion>(
+        override val currentVersion: Version,
+        val availableVersion: Version
+    ) : UpdateResult<Version>(currentVersion)
 
-    data class NotAvailable(override val currentVersion: UpdateVersion, val reason: String) :
-        UpdateResult(currentVersion)
+    data class NotAvailable<Version : AbstractUpdateVersion>(
+        override val currentVersion: Version,
+        val reason: String
+    ) :
+        UpdateResult<Version>(currentVersion)
 
-    data class Error(override val currentVersion: UpdateVersion, val error: Throwable)
-        : UpdateResult(currentVersion)
+    data class Error<Version : AbstractUpdateVersion>(
+        override val currentVersion: Version,
+        val error: Throwable
+    ) : UpdateResult<Version>(currentVersion)
 }

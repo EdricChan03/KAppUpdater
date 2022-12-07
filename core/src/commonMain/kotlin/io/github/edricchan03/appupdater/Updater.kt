@@ -5,7 +5,7 @@ import io.github.edricchan03.appupdater.dsl.UpdaterSources
 import io.github.edricchan03.appupdater.source.UpdateSource
 
 class Updater {
-    private val sources = mutableListOf<UpdateSource>()
+    private val sources = mutableListOf<UpdateSource<*>>()
     private var config = UpdaterConfig()
 
     /** Sets the sources to use. */

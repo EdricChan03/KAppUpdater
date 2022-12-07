@@ -27,6 +27,7 @@ data class UpdaterConfig(
     }
 
     class Builder {
+        /** How often to check for updates. */
         var checkInterval = INTERVAL_DEFAULT
         var listener: UpdaterListener? = null
 
