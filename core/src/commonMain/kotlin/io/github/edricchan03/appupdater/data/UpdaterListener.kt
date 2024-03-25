@@ -21,7 +21,7 @@ public inline fun <Version : AbstractUpdateVersion> updaterListener(
     crossinline onUpdateNotAvailable: (UpdateResult.NotAvailable<Version>) -> Unit = {},
     crossinline onUpdateError: (UpdateResult.Error<Version>) -> Unit = {},
     crossinline onUpdateCheck: () -> Unit = {}
-) = object : UpdaterListener<Version> {
+): UpdaterListener<Version> = object : UpdaterListener<Version> {
     override fun onUpdateAvailable(data: UpdateResult.Available<Version>) {
         onUpdateAvailable(data)
     }
