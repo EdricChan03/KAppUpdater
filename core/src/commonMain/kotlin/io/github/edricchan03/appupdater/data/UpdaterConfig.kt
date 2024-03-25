@@ -11,8 +11,8 @@ import kotlin.time.Duration.Companion.hours
  * a listener, see [com.edricchan.appupdater.data.updaterListener].)
  */
 public data class UpdaterConfig(
-    var checkInterval: Duration = INTERVAL_DEFAULT,
-    var listener: UpdaterListener? = null
+    val checkInterval: Duration = INTERVAL_DEFAULT,
+    val listener: UpdaterListener? = null
 ) {
     private constructor(builder: Builder) : this(
         builder.checkInterval,
