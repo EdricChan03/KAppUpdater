@@ -4,11 +4,6 @@ plugins {
     alias(libs.plugins.android.gradle.library)
 }
 
-repositories {
-    google()
-    mavenCentral()
-}
-
 kotlin {
     explicitApi()
 
