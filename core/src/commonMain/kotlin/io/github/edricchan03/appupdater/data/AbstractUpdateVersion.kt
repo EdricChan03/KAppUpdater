@@ -7,11 +7,11 @@ package io.github.edricchan03.appupdater.data
  * @property releaseNotes Release notes for the version, if any.
  * @property downloadUrl The download URL for the version.
  */
-abstract class AbstractUpdateVersion(
-    val version: String,
-    val releaseNotes: String,
-    val downloadUrl: String
+public abstract class AbstractUpdateVersion(
+    public val version: String,
+    public val releaseNotes: String,
+    public val downloadUrl: String
 ) {
     /** Checks if the [other] version is higher/lower than this version. */
-    abstract operator fun compareTo(other: AbstractUpdateVersion): Int
+    public abstract operator fun compareTo(other: AbstractUpdateVersion): Int
 }

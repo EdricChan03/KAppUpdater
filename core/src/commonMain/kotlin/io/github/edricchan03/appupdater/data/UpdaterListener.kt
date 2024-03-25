@@ -1,22 +1,22 @@
 package io.github.edricchan03.appupdater.data
 
 /** Listener configuration for the [com.edricchan.appupdater.Updater]. */
-interface UpdaterListener<Version : AbstractUpdateVersion> {
+public interface UpdaterListener<Version : AbstractUpdateVersion> {
     /** Called when an update is available. */
-    fun onUpdateAvailable(data: UpdateResult.Available<Version>)
+    public fun onUpdateAvailable(data: UpdateResult.Available<Version>)
 
     /** Called when an update is not available. */
-    fun onUpdateNotAvailable(data: UpdateResult.NotAvailable<Version>)
+    public fun onUpdateNotAvailable(data: UpdateResult.NotAvailable<Version>)
 
     /** Called when an update results in an error. */
-    fun onUpdateError(data: UpdateResult.Error<Version>)
+    public fun onUpdateError(data: UpdateResult.Error<Version>)
 
     /** Called when an update is checked. */
-    fun onUpdateCheck()
+    public fun onUpdateCheck()
 }
 
 /** Creates an instance of [UpdaterListener] using the given lambdas. */
-inline fun <Version : AbstractUpdateVersion> updaterListener(
+public inline fun <Version : AbstractUpdateVersion> updaterListener(
     crossinline onUpdateAvailable: (UpdateResult.Available<Version>) -> Unit = {},
     crossinline onUpdateNotAvailable: (UpdateResult.NotAvailable<Version>) -> Unit = {},
     crossinline onUpdateError: (UpdateResult.Error<Version>) -> Unit = {},
@@ -41,7 +41,7 @@ inline fun <Version : AbstractUpdateVersion> updaterListener(
 }
 
 /** Sets a listener on the given [UpdaterConfig.Builder]. */
-inline fun <Version : AbstractUpdateVersion> UpdaterConfig.Builder.setListener(
+public inline fun <Version : AbstractUpdateVersion> UpdaterConfig.Builder.setListener(
     crossinline onUpdateAvailable: (UpdateResult.Available<Version>) -> Unit = {},
     crossinline onUpdateNotAvailable: (UpdateResult.NotAvailable<Version>) -> Unit = {},
     crossinline onUpdateError: (UpdateResult.Error<Version>) -> Unit = {},

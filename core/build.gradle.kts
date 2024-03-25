@@ -10,6 +10,8 @@ repositories {
 }
 
 kotlin {
+    explicitApi()
+
     jvmToolchain(11)
 
     jvm {
