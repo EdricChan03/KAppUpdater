@@ -10,15 +10,15 @@ repositories {
 }
 
 kotlin {
+    jvmToolchain(11)
+
     jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "1.8"
-        }
-        testRuns["test"].executionTask.configure {
+        testRuns["test"].executionTask {
             useJUnitPlatform()
         }
     }
-    android()
+    androidTarget()
+
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
@@ -47,10 +47,5 @@ android {
 
     defaultConfig {
         minSdk = 24
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
     }
 }
